@@ -5,8 +5,14 @@
 
 SnowMan::SnowMan( ): VisualObject(  ){
 	VisualObject* base = new Sphere( 0.5f);
+	base->fixedTransformation = translate(mat4(1.0f), vec3(0.0f, 0.0f, 0.0f));
 	base->material.setAmbientAndDiffuseMat(vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	this->addChild( base );
+
+	VisualObject* body = new Sphere(0.35f);
+	body->fixedTransformation = translate(mat4(1.0f), vec3(0.0f, .75f, 0.0f));
+	body->material.setAmbientAndDiffuseMat(vec4(1.0f, 1.0f, 1.0f, 1.0f));
+	this->addChild(body);
 	/*VisualObject * fuselage = new Cylinder( 4.0f);
 	fuselage->fixedTransformation = translate(mat4(1.0f), vec3(0.0f, 0.0f, -2.0f));
 	fuselage->material.setAmbientAndDiffuseMat(vec4( 0.1f, 0.1, 0.9f, 1.0f)); 
