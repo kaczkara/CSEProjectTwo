@@ -10,7 +10,7 @@
 #include "SpinnerController.h"
 #include "WaypointController.h"
 #include "SharedGeneralLighting.h"
-#include "SpaceShip.h"
+#include "SnowMan.h"
 
 //static void SpecialKeyboardCB(int Key, int x, int y);
 class ProjectTwo : public OpenGLApplicationBase{
@@ -18,7 +18,7 @@ public:
 	ProjectTwo (){
 		floor = new Floor2();
 
-		pyramid0 = new SpaceShip();
+		pyramid0 = new SnowMan();
 		pyramid0->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
 		pyramid0->material.setEmissiveMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
 		pyramid0->addController(new SpinnerController(glm::vec3(0.0f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));

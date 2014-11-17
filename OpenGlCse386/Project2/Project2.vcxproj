@@ -87,6 +87,7 @@
     <ClCompile Include="ProjectTwo.cpp" />
     <ClCompile Include="OrbitController.cpp" />
     <ClCompile Include="SharedGeneralLighting.cpp" />
+    <ClCompile Include="SnowMan.cpp" />
     <ClCompile Include="SpaceShip.cpp" />
     <ClCompile Include="SpinnerController.cpp" />
     <ClCompile Include="WaypointController.cpp" />
@@ -94,6 +95,7 @@
   <ItemGroup>
     <ClInclude Include="OrbitController.h" />
     <ClInclude Include="SharedGeneralLighting.h" />
+    <ClInclude Include="SnowMan.h" />
     <ClInclude Include="SpaceShip.h" />
     <ClInclude Include="SpinnerController.h" />
     <ClInclude Include="WaypointController.h" />
