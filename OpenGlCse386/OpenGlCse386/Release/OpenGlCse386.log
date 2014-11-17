@@ -1,0 +1,55 @@
+﻿Build started 11/5/2014 9:31:53 PM.
+     1>Project "C:\Users\Kaczkara\Documents\School\CSE\CSE 386 workspace\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\OpenGlCse386.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Pyramid.cpp
+         Pyramid.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Kaczkara\Documents\School\CSE\CSE 386 workspace\OpenGlCse386\Release\OpenGlCse386.lib" /NOLOGO /LTCG Release\BuildShaderProgram.obj
+         Release\Cone.obj
+         Release\Controller.obj
+         Release\Cube.obj
+         Release\Cylinder.obj
+         Release\Floor.obj
+         Release\Floor2.obj
+         Release\glutBase.obj
+         Release\Material.obj
+         Release\OpenGLApplicationBase.obj
+         Release\Pyramid.obj
+         Release\SharedProjectionAndViewing.obj
+         Release\Sphere.obj
+         Release\textureCoordinates.obj
+         Release\VisualObject.obj
+         OpenGlCse386.vcxproj -> C:\Users\Kaczkara\Documents\School\CSE\CSE 386 workspace\OpenGlCse386\Release\OpenGlCse386.lib
+       PostBuildEvent:
+         copy "*.h" "C:\Users\Kaczkara\Documents\School\CSE\CSE 386 workspace\OpenGlCse386\"\Include\
+         copy "C:\Users\Kaczkara\Documents\School\CSE\CSE 386 workspace\OpenGlCse386\Release\OpenGlCse386.lib" "C:\Users\Kaczkara\Documents\School\CSE\CSE 386 workspace\OpenGlCse386\"\"Lib\OpenGlCse386.lib"
+         :VCEnd
+         BuildShaderProgram.h
+         Cone.h
+         Controller.h
+         Cube.h
+         Cylinder.h
+         Floor.h
+         Floor2.h
+         glutBase.h
+         Material.h
+         OpenGLApplicationBase.h
+         Pyramid.h
+         SharedProjectionAndViewing.Conflict.h
+         SharedProjectionAndViewing.h
+         Sphere.h
+         textureCoordinates.h
+         vertexStructs.h
+         VisualObject.h
+                17 file(s) copied.
+                 1 file(s) copied.
+       FinalizeBuildStatus:
+         Deleting file "Release\OpenGlCse386.unsuccessfulbuild".
+         Touching "Release\OpenGlCse386.lastbuildstate".
+     1>Done Building Project "C:\Users\Kaczkara\Documents\School\CSE\CSE 386 workspace\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.26
