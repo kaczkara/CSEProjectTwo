@@ -1,6 +1,7 @@
 #include "Pyramid.h"
 #include "Material.h"
 #include "vertexStructs.h"
+#include "textureCoordinates.h"
 
 Pyramid::Pyramid( GLfloat w, GLfloat h){
 	width=w;
@@ -17,7 +18,6 @@ void Pyramid::initialize(){
 	glGenVertexArrays (1, &vertexArrayObject); 
 	glBindVertexArray( vertexArrayObject );
 
-	vector<pncVertexData> v;
 	vector<unsigned int> indices;
 
 	// define the colors
@@ -34,45 +34,46 @@ void Pyramid::initialize(){
 	v4 = vec3(0.0f, height/2, 0.0f);
 
 	// Front face
-	vec3 frontFaceNormal = findUnitNormal(v4, v3, v0);
+	vec3 faceNormal = findUnitNormal(v4, v3, v0);
 	vec3 rightFace = findUnitNormal(v4, v0, v1);
 	vec3 backFace = findUnitNormal(v4, v1, v2);
 	vec3 leftFace = findUnitNormal(v4, v2, v3);
 	vec3 bottom = vec3(0.0f, -1.0f, 0.0f);
 
+	vector<pntVertexData> norms;	
 	/*front*/
-	v.push_back(pncVertexData(v4, frontFaceNormal, c0));
-	v.push_back(pncVertexData(v3, frontFaceNormal, c0));
-	v.push_back(pncVertexData(v0, frontFaceNormal, c0));
+	norms.push_back(pntVertexData(v4, faceNormal, getPlanarTextCoords(v4, width, height)));
+	norms.push_back(pntVertexData(v3, faceNormal, getPlanarTextCoords(v3, width, height)));
+	norms.push_back(pntVertexData(v0, faceNormal, getPlanarTextCoords(v0, width, height)));
 	indices.push_back(0);
 	indices.push_back(1);
 	indices.push_back(2);
 	/*right*/
-	v.push_back(pncVertexData(v4, rightFace, c1));
-	v.push_back(pncVertexData(v0, rightFace, c1));
-	v.push_back(pncVertexData(v1, rightFace, c1));
+	norms.push_back(pntVertexData(v4, rightFace, getPlanarTextCoords(v4, width, height)));
+	norms.push_back(pntVertexData(v0, rightFace, getPlanarTextCoords(v0, width, height)));
+	norms.push_back(pntVertexData(v1, rightFace, getPlanarTextCoords(v1, width, height)));
 	indices.push_back(3);
 	indices.push_back(4);
 	indices.push_back(5);
 	/*left*/
-	v.push_back(pncVertexData(v4, leftFace, c2));
-	v.push_back(pncVertexData(v2, leftFace, c2));
-	v.push_back(pncVertexData(v3, leftFace, c2));
+	norms.push_back(pntVertexData(v4, leftFace, getPlanarTextCoords(v4, width, height)));
+	norms.push_back(pntVertexData(v2, leftFace, getPlanarTextCoords(v2, width, height)));
+	norms.push_back(pntVertexData(v3, leftFace, getPlanarTextCoords(v3, width, height)));
 	indices.push_back(6);
 	indices.push_back(7);
 	indices.push_back(8);
 	/*back*/
-	v.push_back(pncVertexData(v4, backFace, c3));
-	v.push_back(pncVertexData(v1, backFace, c3));
-	v.push_back(pncVertexData(v2, backFace, c3));
+	norms.push_back(pntVertexData(v4, backFace, getPlanarTextCoords(v4, width, height)));
+	norms.push_back(pntVertexData(v1, backFace, getPlanarTextCoords(v1, width, height)));
+	norms.push_back(pntVertexData(v2, backFace, getPlanarTextCoords(v2, width, height)));
 	indices.push_back(9);
 	indices.push_back(10);
 	indices.push_back(11);
 	/*bottom*/
-	v.push_back(pncVertexData(v0, bottom, c4));
-	v.push_back(pncVertexData(v1, bottom, c4));
-	v.push_back(pncVertexData(v2, bottom, c4));
-	v.push_back(pncVertexData(v3, bottom, c4));
+	norms.push_back(pntVertexData(v0, backFace, getPlanarTextCoords(v0, width, height)));
+	norms.push_back(pntVertexData(v1, backFace, getPlanarTextCoords(v1, width, height)));
+	norms.push_back(pntVertexData(v2, backFace, getPlanarTextCoords(v2, width, height)));
+	norms.push_back(pntVertexData(v3, backFace, getPlanarTextCoords(v3, width, height)));
 	indices.push_back(12);
 	indices.push_back(14);
 	indices.push_back(13);
@@ -83,15 +84,16 @@ void Pyramid::initialize(){
 	/**/
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, v.size() * sizeof(pncVertexData), &v[0], GL_STATIC_DRAW);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(pncVertexData), 0);
+
+	glBufferData(GL_ARRAY_BUFFER, norms.size() * sizeof(pntVertexData), &norms[0], GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(pntVertexData), 0);
 	glEnableVertexAttribArray(0);
 
-	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(pncVertexData),(const GLvoid*)(sizeof(vec3) * 2));
-	glEnableVertexAttribArray(2);
-
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(pncVertexData),(const GLvoid*)sizeof(vec3));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(pntVertexData),(const GLvoid*)sizeof(vec3));
 	glEnableVertexAttribArray(1);
+
+	glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(pntVertexData), (const GLvoid*)(2 * sizeof(vec3)) );
+	glEnableVertexAttribArray(3);
 
 	numberOfIndices = indices.size(); 
 
@@ -99,8 +101,8 @@ void Pyramid::initialize(){
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
 
-	v.clear();
 	indices.clear();
+	norms.clear();
 
 	VisualObject::initialize();
 

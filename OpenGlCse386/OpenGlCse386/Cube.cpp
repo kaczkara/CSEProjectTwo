@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "vertexStructs.h"
+#include "textureCoordinates.h"
 
 Cube::Cube( GLfloat w, GLfloat h, GLfloat d)
 	:VisualObject( ),width(w), height(h), depth(d)
@@ -35,7 +36,7 @@ void Cube::initialize()
 
 	setShaderValues();
 
-	vector<pnVertexData> v;
+	vector<pntVertexData> v;
 
 	vec3 v0 = vec3( -hW, -hH, hD);
 	vec3 v1 =  vec3( -hW, -hH, -hD);
@@ -60,66 +61,70 @@ void Cube::initialize()
 	// 4 6 5
 	// 0 2 3
 	// 0 1 2
+	vec2 t0 = vec2(0.0f, 0.0f);
+	vec2 t1 = vec2(0.0f, 1.0f);
+	vec2 t2 = vec2(1.0f, 0.0f);
+	vec2 t3 = vec2(1.0f, 1.0f);
 
-	normal = findUnitNormal(v0, v4, v1);
-	v.push_back(pnVertexData(v0, normal));
-	v.push_back(pnVertexData(v4, normal));
-	v.push_back(pnVertexData(v1, normal));
+	normal = findUnitNormal(v0, v4, v1);	//Left face lower triangle
+	v.push_back(pntVertexData(v0, normal, t0));
+	v.push_back(pntVertexData(v4, normal, t1));
+	v.push_back(pntVertexData(v1, normal, t2));
 
-	normal = findUnitNormal(v1, v4, v5);
-	v.push_back(pnVertexData(v1, normal));
-	v.push_back(pnVertexData(v4, normal));
-	v.push_back(pnVertexData(v5, normal));
+	normal = findUnitNormal(v1, v4, v5);	//left face upper triangle
+	v.push_back(pntVertexData(v1, normal, t2));
+	v.push_back(pntVertexData(v4, normal, t1));
+	v.push_back(pntVertexData(v5, normal, t3));
 
-	normal = findUnitNormal(v3, v2, v6);
-	v.push_back(pnVertexData(v3, normal));
-	v.push_back(pnVertexData(v2, normal));
-	v.push_back(pnVertexData(v6, normal));
+	normal = findUnitNormal(v3, v2, v6);	//right face lower triangle
+	v.push_back(pntVertexData(v3, normal, t0));
+	v.push_back(pntVertexData(v2, normal, t2));
+	v.push_back(pntVertexData(v6, normal, t3));
 
-	normal = findUnitNormal(v3, v6, v7);
-	v.push_back(pnVertexData(v3, normal));
-	v.push_back(pnVertexData(v6, normal));
-	v.push_back(pnVertexData(v7, normal));
+	normal = findUnitNormal(v3, v6, v7);	//right face upper triangle
+	v.push_back(pntVertexData(v3, normal, t0));
+	v.push_back(pntVertexData(v6, normal, t3));
+	v.push_back(pntVertexData(v7, normal, t1));
 
-	normal = findUnitNormal(v0, v3, v7);
-	v.push_back(pnVertexData(v0, normal));
-	v.push_back(pnVertexData(v3, normal));
-	v.push_back(pnVertexData(v7, normal));
+	normal = findUnitNormal(v0, v3, v7);	//front face lower triangle
+	v.push_back(pntVertexData(v0, normal, t0));
+	v.push_back(pntVertexData(v3, normal, t2));
+	v.push_back(pntVertexData(v7, normal, t3));
 
-	normal = findUnitNormal(v0, v7, v4);
-	v.push_back(pnVertexData(v0, normal));
-	v.push_back(pnVertexData(v7, normal));
-	v.push_back(pnVertexData(v4, normal));
+	normal = findUnitNormal(v0, v7, v4);	//front face upper triangle
+	v.push_back(pntVertexData(v0, normal, t0));
+	v.push_back(pntVertexData(v7, normal, t3));
+	v.push_back(pntVertexData(v4, normal, t1));
 
-	normal = findUnitNormal(v1, v5, v2);
-	v.push_back(pnVertexData(v1, normal));
-	v.push_back(pnVertexData(v5, normal));
-	v.push_back(pnVertexData(v2, normal));
+	normal = findUnitNormal(v1, v5, v2);	//back face lower triangle
+	v.push_back(pntVertexData(v1, normal, t0));
+	v.push_back(pntVertexData(v5, normal, t2));
+	v.push_back(pntVertexData(v2, normal, t3));
 
-	normal = findUnitNormal(v2, v5, v6);
-	v.push_back(pnVertexData(v2, normal));
-	v.push_back(pnVertexData(v5, normal));
-	v.push_back(pnVertexData(v6, normal));
+	normal = findUnitNormal(v2, v5, v6);	//back face upper triangle
+	v.push_back(pntVertexData(v2, normal, t1));
+	v.push_back(pntVertexData(v5, normal, t2));
+	v.push_back(pntVertexData(v6, normal, t3));
 
-	normal = findUnitNormal(v4, v7, v6);
-	v.push_back(pnVertexData(v4, normal));
-	v.push_back(pnVertexData(v7, normal));
-	v.push_back(pnVertexData(v6, normal));
+	normal = findUnitNormal(v4, v7, v6);	//Top face 
+	v.push_back(pntVertexData(v4, normal, t0));
+	v.push_back(pntVertexData(v7, normal, t1));
+	v.push_back(pntVertexData(v6, normal, t3));
 
-	normal = findUnitNormal(v4, v6, v5);
-	v.push_back(pnVertexData(v4, normal));
-	v.push_back(pnVertexData(v6, normal));
-	v.push_back(pnVertexData(v5, normal));
+	normal = findUnitNormal(v4, v6, v5);	//Top face
+	v.push_back(pntVertexData(v4, normal, t0));
+	v.push_back(pntVertexData(v6, normal, t3));
+	v.push_back(pntVertexData(v5, normal, t2));
 
-	normal = findUnitNormal(v0, v2, v3);
-	v.push_back(pnVertexData(v0, normal));
-	v.push_back(pnVertexData(v2, normal));
-	v.push_back(pnVertexData(v3, normal));
+	normal = findUnitNormal(v0, v2, v3);	//Bottom face
+	v.push_back(pntVertexData(v0, normal, t0));
+	v.push_back(pntVertexData(v2, normal, t3));
+	v.push_back(pntVertexData(v3, normal, t1));
 
-	normal = findUnitNormal(v0, v1, v2);
-	v.push_back(pnVertexData(v0, normal));
-	v.push_back(pnVertexData(v1, normal));
-	v.push_back(pnVertexData(v2, normal));
+	normal = findUnitNormal(v0, v1, v2);	//Bottom face
+	v.push_back(pntVertexData(v0, normal, t0));
+	v.push_back(pntVertexData(v1, normal, t2));
+	v.push_back(pntVertexData(v2, normal, t3));
 
 	GLuint VBO;
 
@@ -128,13 +133,16 @@ void Cube::initialize()
 
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, v.size() * sizeof(pnVertexData), &v[0], GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, v.size() * sizeof(pntVertexData), &v[0], GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(pnVertexData), 0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(pntVertexData), 0);
 	glEnableVertexAttribArray(0);
 
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(pnVertexData), (const GLvoid*)sizeof(vec3));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(pntVertexData), (const GLvoid*)sizeof(vec3));
 	glEnableVertexAttribArray(1);
+
+	glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(pntVertexData), (const GLvoid*)(2 * sizeof(vec3)) );
+	glEnableVertexAttribArray(3);
 
 	numberOfIndices = v.size();
 	v.clear();
@@ -151,16 +159,12 @@ void Cube::draw()
 
 	material.setShaderMaterialProperties();
 
-	glBindVertexArray(vertexArrayObject);
-	
 	glEnable (GL_BLEND);
-    glDepthMask (GL_FALSE);
 
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	
+	glBindVertexArray(vertexArrayObject);
 	glDrawArrays(GL_TRIANGLES, 0, numberOfIndices );
 
-    glDepthMask (GL_TRUE);
     glDisable (GL_BLEND);
 
 	// Draw all children

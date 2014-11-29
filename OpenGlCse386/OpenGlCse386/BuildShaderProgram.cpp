@@ -109,7 +109,7 @@ GLuint BuildShaderProgram( ShaderInfo* shaders )
         GLint compiled;
         glGetShaderiv( shader, GL_COMPILE_STATUS, &compiled );
         if ( !compiled ) {
-#ifdef _DEBUG
+//#ifdef _DEBUG
             GLsizei len;
             glGetShaderiv( shader, GL_INFO_LOG_LENGTH, &len );
 
@@ -117,13 +117,13 @@ GLuint BuildShaderProgram( ShaderInfo* shaders )
             glGetShaderInfoLog( shader, len, &len, log );
             std::cerr << "Shader compilation failed: " << log << std::endl;
             delete [] log;
-#endif /* DEBUG */
+//#endif /* DEBUG */
             return 0;
         }
 		else {
-#ifdef _DEBUG
+//#ifdef _DEBUG
 			//std::cout << entry->filename << " compilation complete. " << std::endl;
-#endif /* DEBUG */
+//#endif /* DEBUG */
 		}
 
 		// Associate the compiled shader with the shader program.
@@ -148,7 +148,7 @@ GLuint BuildShaderProgram( ShaderInfo* shaders )
     GLint linked;
     glGetProgramiv( program, GL_LINK_STATUS, &linked );
     if ( !linked ) {
-#ifdef _DEBUG
+//#ifdef _DEBUG
         GLsizei len;
         glGetProgramiv( program, GL_INFO_LOG_LENGTH, &len );
 
@@ -156,7 +156,7 @@ GLuint BuildShaderProgram( ShaderInfo* shaders )
         glGetProgramInfoLog( program, len, &len, log );
         std::cerr << "Shader linking failed: " << log << std::endl;
         delete [] log;
-#endif /* DEBUG */
+//#endif /* DEBUG */
 
         for ( entry = shaders; entry->type != GL_NONE; ++entry ) {
             glDeleteShader( entry->shader );
@@ -167,9 +167,9 @@ GLuint BuildShaderProgram( ShaderInfo* shaders )
     }
 	else {
 
-#ifdef _DEBUG
+//#ifdef _DEBUG
         std::cout << "Shader Program "<< program << " successfully linked";
-#endif /* DEBUG */
+//#endif /* DEBUG */
 
 	}
 	// Check whether the program can execute given the current pipeline state.
@@ -177,20 +177,20 @@ GLuint BuildShaderProgram( ShaderInfo* shaders )
 	GLint valid;
     glGetProgramiv(program, GL_VALIDATE_STATUS, &valid);
     if (!valid) {
-#ifdef _DEBUG
+//#ifdef _DEBUG
 		GLsizei len;
         glGetProgramiv( program, GL_VALIDATE_STATUS, &len );
 
         GLchar* log = new GLchar[len+1];
         glGetProgramInfoLog( program, len, &len, log );
 		std::cerr << "." << std::endl << "Shader program is invalid: " << log << std::endl;
-#endif /* DEBUG */
+//#endif /* DEBUG */
         return 0;
     }
 
-#ifdef _DEBUG
+//#ifdef _DEBUG
         std::cout << " and is valid. " << std::endl << std::endl;
-#endif /* DEBUG */
+//#endif /* DEBUG */
 
     return program;
 

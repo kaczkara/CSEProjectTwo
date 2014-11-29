@@ -9,6 +9,7 @@ using namespace std;
 
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "bitmap_class.h"
 
 using namespace glm;
 
@@ -69,6 +70,13 @@ struct Material
 		setSpecularExponentMat( specularExpMat );
 		setEmissiveMat( emissiveMat );
 		setTextureMapped(textureMapped);
+
+		if ( textureMapped ) {
+			glBindTexture(GL_TEXTURE_2D, textureObject);
+		}
+		else {
+			glBindTexture(GL_TEXTURE_2D, 0);
+		}
 	}
 
 	void setAmbientMat( vec4 ambientMat )
@@ -136,16 +144,33 @@ struct Material
 
 	bool getTextureMapped() {return textureMapped; }
 
-
-	void setTextureMapped(bool on)
+	bool setupTexture( string textureFileName )
 	{
-		/*this->textureMapped = on;
+		CBitmap image;
+		if( image.loadBMP((const char *)textureFileName.c_str()) == false ) {
+			cerr << "Unable to load texture!" << endl;
+			return false;
+		}
+		glGenTextures(1, &textureObject);
+		glBindTexture( GL_TEXTURE_2D, textureObject );
+		glTexImage2D( GL_TEXTURE_2D, 0, image.getChannels(), 
+			image.getWidth(), image.getHeight(), 0,
+			GL_BGR, GL_UNSIGNED_BYTE, image.getLinePtr(0) );
+		glGenerateMipmap(GL_TEXTURE_2D);
+		glTexParameteri( GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR );
+		glTexParameteri( GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR );
+		glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
+		glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+		return true;
+	} // end setupTexture
+	void setTextureMapped(bool on) {
+		this->textureMapped = on;
 		if (textureMappedLoc != 0xFFFFFFFF) {
 			glUniform1i(textureMappedLoc, textureMapped);
 		}
 		else {
-			cout << "Texture mapped enabled location not set." << endl;
-		}*/
+			//cout << "Texture mapped enabled location not set." << endl;
+		}
 	}
 
 protected: 
@@ -167,4 +192,7 @@ protected:
 
 	GLint textureMappedLoc;
 	bool textureMapped;
+
+	//for texture mapping
+	GLuint textureObject;
 };
