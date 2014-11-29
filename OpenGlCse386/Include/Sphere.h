@@ -32,15 +32,12 @@ class Sphere : public VisualObject
 		// this variable will later be used to hold the number of indices
 		int bodyIndicesCount, bottomIndicesCount, topIndicesCount;
 
-		// For texture mapping
-		GLuint textureObject;
+		// Step in z and radius as stacks are drawn.
+		double z0, z1;
+		double r0, r1;
 
-	// Step in z and radius as stacks are drawn.
-	double z0, z1;
-	double r0, r1;
-
-	float stackStep;
-	float sliceStep;
+		float stackStep;
+		float sliceStep;
 };
 
 #endif /* ___SPHERE_H___ */

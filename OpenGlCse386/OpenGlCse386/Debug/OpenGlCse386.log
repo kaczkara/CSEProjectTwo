@@ -1,16 +1,48 @@
-﻿Build started 11/29/2014 4:30:57 PM.
+﻿Build started 11/29/2014 5:37:51 PM.
      1>Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\OpenGlCse386.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt BuildShaderProgram.cpp Cone.cpp Controller.cpp Cube.cpp Cylinder.cpp Floor.cpp Floor2.cpp Material.cpp OpenGLApplicationBase.cpp Pyramid.cpp SharedProjectionAndViewing.cpp Sphere.cpp VisualObject.cpp glutBase.cpp
+         Sphere.cpp
+         Pyramid.cpp
+         Cylinder.cpp
+         Cube.cpp
+         Cone.cpp
+         BuildShaderProgram.cpp
+         Generating Code...
+         Compiling...
+         glutBase.cpp
+         VisualObject.cpp
+         SharedProjectionAndViewing.cpp
+         OpenGLApplicationBase.cpp
+         Material.cpp
+         Floor2.cpp
+         Floor.cpp
+         Controller.cpp
+         Generating Code...
        Lib:
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" /NOLOGO Debug\BuildShaderProgram.obj
+         Debug\Cone.obj
+         Debug\Controller.obj
+         Debug\Cube.obj
+         Debug\Cylinder.obj
+         Debug\Floor.obj
+         Debug\Floor2.obj
+         Debug\glutBase.obj
+         Debug\Material.obj
+         Debug\OpenGLApplicationBase.obj
+         Debug\Pyramid.obj
+         Debug\SharedProjectionAndViewing.obj
+         Debug\Sphere.obj
+         Debug\textureCoordinates.obj
+         Debug\VisualObject.obj
          OpenGlCse386.vcxproj -> C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib
        PostBuildEvent:
          copy "*.h" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\Include\
          copy "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\"Lib\OpenGlCse386.lib"
          :VCEnd
+         bitmap_class.h
          BuildShaderProgram.h
          Cone.h
          Controller.h
@@ -28,7 +60,8 @@
          textureCoordinates.h
          vertexStructs.h
          VisualObject.h
-                17 file(s) copied.
+         Wall.h
+                19 file(s) copied.
                  1 file(s) copied.
        FinalizeBuildStatus:
          Deleting file "Debug\OpenGlCse386.unsuccessfulbuild".
@@ -37,4 +70,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.75
+Time Elapsed 00:00:46.92
