@@ -19,9 +19,9 @@ public:
 		floor = new Floor2();
 
 		pyramid0 = new SnowMan();
-		pyramid0->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
-		pyramid0->material.setEmissiveMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
-		pyramid0->addController(new SpinnerController(glm::vec3(0.0f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));
+		// pyramid0->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
+		// pyramid0->material.setEmissiveMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
+		// pyramid0->addController(new SpinnerController(glm::vec3(0.0f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));
 
 		sphere = new Sphere();
 		sphere->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
@@ -142,7 +142,7 @@ public:
 		}
 	}
 	virtual void initialize(){
-		glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 		glFrontFace(GL_CCW);
 		glCullFace(GL_BACK);
 		glEnable(GL_CULL_FACE);
