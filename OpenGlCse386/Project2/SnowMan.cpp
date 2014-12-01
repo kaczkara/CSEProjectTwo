@@ -5,20 +5,20 @@
 #include "Cube.h"
 
 SnowMan::SnowMan( ): VisualObject(  ){
-	VisualObject* base = new Sphere( 0.45f);
+	VisualObject* base = new Sphere( 0.225f);
 	base->fixedTransformation = translate(mat4(1.0f), vec3(0.0f, 0.0f, 0.0f));
 	base->material.setAmbientAndDiffuseMat(vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	base->material.setEmissiveMat(vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	this->addChild(base);
 
-	VisualObject* body = new Sphere(0.30f);
-	body->fixedTransformation = translate(mat4(1.0f), vec3(0.0f, .70f, 0.0f));
+	VisualObject* body = new Sphere(0.15f);
+	body->fixedTransformation = translate(mat4(1.0f), vec3(0.0f, .30f, 0.0f));
 	body->material.setAmbientAndDiffuseMat(vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	body->material.setEmissiveMat(vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	this->addChild(body);
 
-	VisualObject* head = new Sphere(0.20f);
-	head->fixedTransformation = translate(mat4(1.0f), vec3(0.0f, 1.15f, 0.0f));
+	VisualObject* head = new Sphere(0.10f);
+	head->fixedTransformation = translate(mat4(1.0f), vec3(0.0f, 0.50f, 0.0f));
 	head->material.setAmbientAndDiffuseMat(vec4(1.0f, 1.0, 1.0f, 1.0f));
 	head->material.setEmissiveMat(vec4(1.0f, 1.0, 1.0f, 1.0f));
 	this->addChild(head);
