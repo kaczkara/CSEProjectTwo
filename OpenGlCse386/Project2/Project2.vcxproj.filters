@@ -36,6 +36,9 @@
     <ClCompile Include="SnowMan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ChristmasTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OrbitController.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SnowMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChristmasTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

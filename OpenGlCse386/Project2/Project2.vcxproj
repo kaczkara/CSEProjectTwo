@@ -84,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ChristmasTree.cpp" />
     <ClCompile Include="ProjectTwo.cpp" />
     <ClCompile Include="OrbitController.cpp" />
     <ClCompile Include="SharedGeneralLighting.cpp" />
@@ -93,6 +94,7 @@
     <ClCompile Include="WaypointController.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChristmasTree.h" />
     <ClInclude Include="OrbitController.h" />
     <ClInclude Include="SharedGeneralLighting.h" />
     <ClInclude Include="SnowMan.h" />
