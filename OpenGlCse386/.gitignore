@@ -2,5 +2,6 @@ Debug/
 Release/
 OpenGlCse386/Debug/
 OpenGlCse386/Release/
-Project2/Debug/*
+Project2/Debug/
 Project2/Release/
+OpenGlCse386/Project2/Debug/
