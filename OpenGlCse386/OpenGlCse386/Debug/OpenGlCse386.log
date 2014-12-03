@@ -1,25 +1,11 @@
-﻿Build started 11/29/2014 5:37:51 PM.
+﻿Build started 12/3/2014 4:27:10 PM.
      1>Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\OpenGlCse386.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt BuildShaderProgram.cpp Cone.cpp Controller.cpp Cube.cpp Cylinder.cpp Floor.cpp Floor2.cpp Material.cpp OpenGLApplicationBase.cpp Pyramid.cpp SharedProjectionAndViewing.cpp Sphere.cpp VisualObject.cpp glutBase.cpp
-         Sphere.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Pyramid.cpp Wall.cpp
+         Wall.cpp
          Pyramid.cpp
-         Cylinder.cpp
-         Cube.cpp
-         Cone.cpp
-         BuildShaderProgram.cpp
-         Generating Code...
-         Compiling...
-         glutBase.cpp
-         VisualObject.cpp
-         SharedProjectionAndViewing.cpp
-         OpenGLApplicationBase.cpp
-         Material.cpp
-         Floor2.cpp
-         Floor.cpp
-         Controller.cpp
          Generating Code...
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" /NOLOGO Debug\BuildShaderProgram.obj
@@ -37,6 +23,7 @@
          Debug\Sphere.obj
          Debug\textureCoordinates.obj
          Debug\VisualObject.obj
+         Debug\Wall.obj
          OpenGlCse386.vcxproj -> C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib
        PostBuildEvent:
          copy "*.h" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\Include\
@@ -70,4 +57,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:46.92
+Time Elapsed 00:00:14.00

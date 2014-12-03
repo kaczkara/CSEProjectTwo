@@ -86,6 +86,7 @@
   <ItemGroup>
     <ClCompile Include="ChristmasTree.cpp" />
     <ClCompile Include="House.cpp" />
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="ProjectTwo.cpp" />
     <ClCompile Include="OrbitController.cpp" />
     <ClCompile Include="SharedGeneralLighting.cpp" />
@@ -97,6 +98,7 @@
   <ItemGroup>
     <ClInclude Include="ChristmasTree.h" />
     <ClInclude Include="House.h" />
+    <ClInclude Include="Light.h" />
     <ClInclude Include="OrbitController.h" />
     <ClInclude Include="SharedGeneralLighting.h" />
     <ClInclude Include="SnowMan.h" />
