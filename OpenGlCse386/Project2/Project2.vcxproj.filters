@@ -80,4 +80,9 @@
     <None Include="pcVsUniViewProj.vert" />
     <None Include="pfixed-function-shared-lighting-phong.frag" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="snow.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

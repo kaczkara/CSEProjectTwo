@@ -1,14 +1,18 @@
-﻿Build started 12/3/2014 4:27:10 PM.
+﻿Build started 12/3/2014 5:29:55 PM.
      1>Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\OpenGlCse386.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Pyramid.cpp Wall.cpp
-         Wall.cpp
-         Pyramid.cpp
-         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt bitmap_class.cpp
+         bitmap_class.cpp
+     1>c:\users\kaczkara\desktop\cseprojecttwo\openglcse386\openglcse386\bitmap_class.cpp(75): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+       ResourceCompile:
+         All outputs are up-to-date.
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" /NOLOGO Debug\BuildShaderProgram.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" /NOLOGO Debug\OpenGlCse386.res
+         Debug\bitmap_class.obj
+         Debug\BuildShaderProgram.obj
          Debug\Cone.obj
          Debug\Controller.obj
          Debug\Cube.obj
@@ -24,6 +28,7 @@
          Debug\textureCoordinates.obj
          Debug\VisualObject.obj
          Debug\Wall.obj
+     1>LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
          OpenGlCse386.vcxproj -> C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib
        PostBuildEvent:
          copy "*.h" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\Include\
@@ -41,6 +46,7 @@
          Material.h
          OpenGLApplicationBase.h
          Pyramid.h
+         resource.h
          SharedProjectionAndViewing.Conflict.h
          SharedProjectionAndViewing.h
          Sphere.h
@@ -48,7 +54,7 @@
          vertexStructs.h
          VisualObject.h
          Wall.h
-                19 file(s) copied.
+                20 file(s) copied.
                  1 file(s) copied.
        FinalizeBuildStatus:
          Deleting file "Debug\OpenGlCse386.unsuccessfulbuild".
@@ -57,4 +63,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:14.00
+Time Elapsed 00:00:03.16

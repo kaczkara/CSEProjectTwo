@@ -7,14 +7,14 @@
 Floor2::Floor2( GLfloat w)
 	:VisualObject( ), sideLength( w ), normalVector(vec3(0.0f, 1.0f, 0.0f))
 { 
-		divisionsPerSide = (int)sideLength;
+	divisionsPerSide = (int)sideLength;
 
-		if( divisionsPerSide% 2 != 0) {
-			divisionsPerSide = divisionsPerSide + 1;
-		}
-		tileWidth = sideLength / divisionsPerSide ;
+	if( divisionsPerSide% 2 != 0) {
+		divisionsPerSide = divisionsPerSide + 1;
+	}
+	tileWidth = sideLength / divisionsPerSide ;
 }
- 
+
 Floor2::~Floor2(void)
 {
 	glDeleteVertexArrays (1, &lightSquareVertexArrayObject);
@@ -33,28 +33,30 @@ void Floor2::setShaderValues()
 	assert(modelLocation != 0xFFFFFFFF);
 
 	darkMaterial.setUpMaterial( getUniformLocation( shaderProgram, "object.ambientMat"),
-						 getUniformLocation( shaderProgram, "object.diffuseMat"),
-						 getUniformLocation( shaderProgram, "object.specularMat"),
-						 getUniformLocation( shaderProgram, "object.specularExp"),
-						 getUniformLocation( shaderProgram, "object.emissiveMat" ),
-						 getUniformLocation( shaderProgram, "object.textureMapped") );
-	
-	darkMaterial.setAmbientAndDiffuseMat( vec4( 0.10f, 0.10f, 0.10f, 1.0f ) );
-	darkMaterial.setSpecularMat( vec4(1.0f, 1.0f, 1.0f, 1.0f) );
-	darkMaterial.setSpecularExponentMat( 64.0f );
-	darkMaterial.setTextureMapped( false );
+		getUniformLocation( shaderProgram, "object.diffuseMat"),
+		getUniformLocation( shaderProgram, "object.specularMat"),
+		getUniformLocation( shaderProgram, "object.specularExp"),
+		getUniformLocation( shaderProgram, "object.emissiveMat" ),
+		getUniformLocation( shaderProgram, "object.textureMapped") );
+
+	darkMaterial.setAmbientAndDiffuseMat( vec4( 0.90f, 0.90f, 0.90f, 1.0f ) );
+	//darkMaterial.setSpecularMat( vec4(1.0f, 1.0f, 1.0f, 1.0f) );
+	//darkMaterial.setSpecularExponentMat( 64.0f );
+	darkMaterial.setupTexture("snow.bmp");
+	darkMaterial.setTextureMapped( true );
 
 	lightMaterial.setUpMaterial( getUniformLocation( shaderProgram, "object.ambientMat"),
-						 getUniformLocation( shaderProgram, "object.diffuseMat"),
-						 getUniformLocation( shaderProgram, "object.specularMat"),
-						 getUniformLocation( shaderProgram, "object.specularExp"),
-						 getUniformLocation( shaderProgram, "object.emissiveMat" ) ,
-						 getUniformLocation( shaderProgram, "object.textureMapped") );
-	
+		getUniformLocation( shaderProgram, "object.diffuseMat"),
+		getUniformLocation( shaderProgram, "object.specularMat"),
+		getUniformLocation( shaderProgram, "object.specularExp"),
+		getUniformLocation( shaderProgram, "object.emissiveMat" ) ,
+		getUniformLocation( shaderProgram, "object.textureMapped") );
+
 	lightMaterial.setAmbientAndDiffuseMat( vec4( 0.90f, 0.90f, 0.90f, 1.0f ) );
-	lightMaterial.setSpecularMat( vec4(1.0f, 1.0f, 1.0f, 1.0f) );
-	lightMaterial.setSpecularExponentMat( 64.0f );
-	lightMaterial.setTextureMapped( false );
+	//lightMaterial.setSpecularMat( vec4(1.0f, 1.0f, 1.0f, 1.0f) );
+	//lightMaterial.setSpecularExponentMat( 64.0f );
+	lightMaterial.setupTexture("snow.bmp");
+	lightMaterial.setTextureMapped( true );
 
 }
 
@@ -115,7 +117,7 @@ void Floor2::initilizeDarkSquares()
 			indices.push_back(currentIndex);
 			indices.push_back(currentIndex + 2);
 			indices.push_back(currentIndex + 3);
-			
+
 			currentIndex += 4;
 
 			tileX += tileWidth;
@@ -133,7 +135,7 @@ void Floor2::initilizeDarkSquares()
 
 	} // end for j
 
- 	glGenBuffers(1, &VBO);
+	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, v.size() * sizeof(pnVertexData), &v[0], GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(pnVertexData), 0);
@@ -144,9 +146,9 @@ void Floor2::initilizeDarkSquares()
 
 	darkSquareIndices = indices.size(); 
 
-    glGenBuffers(1, &IBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
+	glGenBuffers(1, &IBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
 
 	v.clear();
 	indices.clear();
@@ -197,7 +199,7 @@ void Floor2::initilizeLightSquares()
 			indices.push_back(currentIndex);
 			indices.push_back(currentIndex + 2);
 			indices.push_back(currentIndex + 3);
-			
+
 			currentIndex += 4;
 
 			tileX += tileWidth;
@@ -215,7 +217,7 @@ void Floor2::initilizeLightSquares()
 
 	} // end for j
 
- 	glGenBuffers(1, &VBO);
+	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, v.size() * sizeof(pnVertexData), &v[0], GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(pnVertexData), 0);
@@ -226,9 +228,9 @@ void Floor2::initilizeLightSquares()
 
 	lightSquareIndices = indices.size(); 
 
-    glGenBuffers(1, &IBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
+	glGenBuffers(1, &IBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
 
 	v.clear();
 	indices.clear();
@@ -244,11 +246,11 @@ void Floor2::draw()
 
 	glBindVertexArray(vertexArrayObject);
 	darkMaterial.setShaderMaterialProperties();
-    glDrawElements(GL_TRIANGLES, darkSquareIndices, GL_UNSIGNED_INT, 0);
-	
+	glDrawElements(GL_TRIANGLES, darkSquareIndices, GL_UNSIGNED_INT, 0);
+
 	glBindVertexArray(lightSquareVertexArrayObject);
 	lightMaterial.setShaderMaterialProperties();
-    glDrawElements(GL_TRIANGLES, lightSquareIndices, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, lightSquareIndices, GL_UNSIGNED_INT, 0);
 
 	// Draw all children
 	VisualObject::draw();

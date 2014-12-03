@@ -84,6 +84,7 @@ copy "$(TargetPath)" "$(SolutionDir)"\"Lib\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="bitmap_class.h" />
     <ClInclude Include="BuildShaderProgram.h" />
     <ClInclude Include="Cone.h" />
     <ClInclude Include="Controller.h" />
@@ -95,6 +96,7 @@ copy "$(TargetPath)" "$(SolutionDir)"\"Lib\$(TargetFileName)"</Command>
     <ClInclude Include="Material.h" />
     <ClInclude Include="OpenGLApplicationBase.h" />
     <ClInclude Include="Pyramid.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="SharedProjectionAndViewing.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="textureCoordinates.h" />
@@ -103,6 +105,7 @@ copy "$(TargetPath)" "$(SolutionDir)"\"Lib\$(TargetFileName)"</Command>
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bitmap_class.cpp" />
     <ClCompile Include="BuildShaderProgram.cpp" />
     <ClCompile Include="Cone.cpp" />
     <ClCompile Include="Controller.cpp" />
@@ -119,6 +122,12 @@ copy "$(TargetPath)" "$(SolutionDir)"\"Lib\$(TargetFileName)"</Command>
     <ClCompile Include="textureCoordinates.cpp" />
     <ClCompile Include="VisualObject.cpp" />
     <ClCompile Include="Wall.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OpenGlCse386.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="snow.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

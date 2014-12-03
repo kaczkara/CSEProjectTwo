@@ -11,6 +11,7 @@
 #include "WaypointController.h"
 #include "SharedGeneralLighting.h"
 #include "SnowMan.h"
+#include "Wall.h"
 #include "ChristmasTree.h"
 #include "House.h"
 
@@ -18,7 +19,10 @@
 class ProjectTwo : public OpenGLApplicationBase{
 public: 
 	ProjectTwo (){
-		floor = new Floor2();
+		floor = new Wall();
+		floor->fixedTransformation = translate(rotate(mat4(1.0), -90.0f, vec3(1.0f, 0.0f, 0.0f)), vec3(0.0f, -5.0f, 0.0f));
+		floor->material.setTextureMapped(true);
+		floor->material.setupTexture("snow.bmp");
 
 		house = new House(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 
@@ -165,7 +169,7 @@ public:
 		VisualObject::draw();
 	}
 	SharedGeneralLighting generalLighting;
-	Floor2* floor;
+	VisualObject* floor;
 	VisualObject* pyramid0;
 	VisualObject* sphere;
 	VisualObject* house;
