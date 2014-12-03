@@ -1,5 +1,6 @@
 #include "ChristmasTree.h"
 #include "Cone.h"
+#include "Light.h"
 #include "Cylinder.h"
 
 ChristmasTree::ChristmasTree() {
@@ -12,9 +13,13 @@ ChristmasTree::ChristmasTree() {
 	VisualObject* base = new Cone( 2.0f);
 	base->fixedTransformation = rotate(translate(mat4(1.0f), vec3(0.0f, 0.0f, 0.0f)), -90.0f, vec3(1.0f, 0.0f, 0.0f));
 	base->material.setAmbientAndDiffuseMat(vec4(0.0f, 0.6f, 0.0f, 1.0f));
-	base->material.setEmissiveMat(vec4(1.0f, 1.0f, 1.0f, 0.5f));
+	base->material.setEmissiveMat(vec4(.8f, 1.0f, 0.8f, 0.5f));
 	this->addChild(base);
 
+	VisualObject* lightbulb = new Light(vec4(1.0f, 1.0f, .5f, 1.0f), .05f);
+	lightbulb->modelMatrix = translate(mat4(1.0f), vec3(0.0f, 2.0f, 0.0f));
+	this->addChild(lightbulb);
+	
 }
 
 
