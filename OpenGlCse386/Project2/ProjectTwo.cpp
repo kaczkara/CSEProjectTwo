@@ -22,7 +22,7 @@ public:
 		pyramid0 = new ChristmasTree();
 		// pyramid0->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
 		// pyramid0->material.setEmissiveMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
-		// pyramid0->addController(new SpinnerController(glm::vec3(0.0f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));
+		pyramid0->addController(new SpinnerController(glm::vec3(0.0f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));
 
 		sphere = new SnowMan();
 		//sphere->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
