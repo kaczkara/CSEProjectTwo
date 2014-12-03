@@ -9,7 +9,8 @@ Pyramid::Pyramid( GLfloat w, GLfloat h){
 	numberOfIndices=18;
 }
 
-void Pyramid::initialize(){
+void Pyramid::initialize(){
+
 	setShaderValues();
 	vec3 v0, v1, v2, v3, v4;
 

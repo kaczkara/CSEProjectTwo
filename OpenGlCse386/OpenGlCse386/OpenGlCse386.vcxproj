@@ -100,6 +100,7 @@ copy "$(TargetPath)" "$(SolutionDir)"\"Lib\$(TargetFileName)"</Command>
     <ClInclude Include="textureCoordinates.h" />
     <ClInclude Include="vertexStructs.h" />
     <ClInclude Include="VisualObject.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BuildShaderProgram.cpp" />
@@ -117,6 +118,7 @@ copy "$(TargetPath)" "$(SolutionDir)"\"Lib\$(TargetFileName)"</Command>
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="textureCoordinates.cpp" />
     <ClCompile Include="VisualObject.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

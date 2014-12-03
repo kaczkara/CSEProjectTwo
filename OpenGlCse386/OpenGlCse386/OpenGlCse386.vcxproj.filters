@@ -63,6 +63,9 @@
     <ClInclude Include="textureCoordinates.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glutBase.cpp">
@@ -108,6 +111,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="textureCoordinates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

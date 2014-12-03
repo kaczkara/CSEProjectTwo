@@ -12,12 +12,15 @@
 #include "SharedGeneralLighting.h"
 #include "SnowMan.h"
 #include "ChristmasTree.h"
+#include "House.h"
 
 //static void SpecialKeyboardCB(int Key, int x, int y);
 class ProjectTwo : public OpenGLApplicationBase{
 public: 
 	ProjectTwo (){
 		floor = new Floor2();
+
+		house = new House(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 
 		pyramid0 = new ChristmasTree();
 		// pyramid0->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
@@ -51,6 +54,7 @@ public:
 		addChild(cylinder);
 		addChild(cone);
 		addChild(cube);
+		addChild(house);
 
 		// Create array of ShaderInfo structs that specifies the vertex and 
 		// fragment shaders to be compiled and linked into a program. 
@@ -69,6 +73,7 @@ public:
 		cylinder->setShader(shaderProgram);
 		cone->setShader(shaderProgram);
 		cube->setShader(shaderProgram);
+		house->setShader(shaderProgram);
 
 		setupLighting(shaderProgram);
 
@@ -102,7 +107,8 @@ public:
 		generalLighting.setSpecularColor( GL_LIGHT_THREE, vec4(1.0f, 1.0f, 1.0f, 1.0f) );
 		generalLighting.setPositionOrDirection( GL_LIGHT_THREE, vec4(0.0f, 8.0f, 0.0f, 1.0f) );
 		generalLighting.setSpotDirection( GL_LIGHT_THREE, vec3(0.0f, -1.0f, 0.0f) );
-		generalLighting.setSpotCutoffCos( GL_LIGHT_THREE, cos(glm::radians(15.0f)) );
+		generalLighting.setSpotCutoffCos( GL_LIGHT_THREE, cos(glm::radians(15.0f)) );
+
 	} // end setupLighting
 	void setViewPoint( ) {
 		glm::mat4 viewMatrix;
@@ -139,7 +145,8 @@ public:
 			glm::mat4 transView = glm::translate(glm::mat4(1.0f), glm::vec3( 0.0f, 0.0f,rotationZ ));
 			glm::mat4 rotateViewX = glm::rotate(glm::mat4(1.0f), rotationX, glm::vec3(1.0f, 0.0f, 0.0f)); 
 			glm::mat4 rotateViewY = glm::rotate(glm::mat4(1.0f), rotationY, glm::vec3(0.0f, 1.0f, 0.0f));
-			projectionAndViewing.setViewMatrix( transView * rotateViewX * rotateViewY );			break;
+			projectionAndViewing.setViewMatrix( transView * rotateViewX * rotateViewY );
+			break;
 		}
 	}
 	virtual void initialize(){
@@ -161,6 +168,7 @@ public:
 	Floor2* floor;
 	VisualObject* pyramid0;
 	VisualObject* sphere;
+	VisualObject* house;
 	Cylinder* cylinder;
 	Cube* cube;
 	Cone* cone;
@@ -176,7 +184,8 @@ protected:
 	GLuint createViewMenu();
 }; // end uniqueidLab3
 ProjectTwo* labClassPtr;
-static void SpecialKeyboardCB(int Key, int x, int y){	switch (Key) {
+static void SpecialKeyboardCB(int Key, int x, int y){
+	switch (Key) {
 	case GLUT_KEY_RIGHT:
 		labClassPtr->rotationY++;
 		break;
@@ -191,7 +200,8 @@ static void SpecialKeyboardCB(int Key, int x, int y){	switch (Key) {
 		break;
 	default:
 		break;
-	}}
+	}
+}
 void ProjectTwo::KeyboardCB(unsigned char Key, int x, int y){
 	bool lightOn;
 	switch (Key) {
@@ -274,12 +284,20 @@ GLuint ProjectTwo::createViewMenu(){
 	GLuint menuId = glutCreateMenu(viewMenu);
 	// Specify menu items and their integer identifiers
 	glutAddMenuEntry("Default", 0);
-	glutAddMenuEntry("View 1", 1);	glutAddMenuEntry("View 2", 2);	glutAddMenuEntry("View 3", 3);	glutAddMenuEntry("View 4", 4);	glutAddMenuEntry("View 5", 5);	glutAddMenuEntry("View 6", 6);	glutAddMenuEntry("View 7", 7);	return menuId;
+	glutAddMenuEntry("View 1", 1);
+	glutAddMenuEntry("View 2", 2);
+	glutAddMenuEntry("View 3", 3);
+	glutAddMenuEntry("View 4", 4);
+	glutAddMenuEntry("View 5", 5);
+	glutAddMenuEntry("View 6", 6);
+	glutAddMenuEntry("View 7", 7);
+	return menuId;
 }
 
 void viewMenu(int value){
 	labClassPtr-> view = value;
-	cout << "View point " << value << endl;
+	cout << "View point " << value << endl;
+
 } // end figureMenu
 void ProjectTwo::setUpMenus(){
 	// Create polygon submenu
@@ -291,7 +309,8 @@ void ProjectTwo::setUpMenus(){
 	GLuint menu5id = createAntiAliasingMenu();
 	// Create main menu
 	topMenu = glutCreateMenu(mainMenu);
-	glutAddSubMenu("View", menu0id); // Attach polygon Menu	glutAddSubMenu("Polygon Mode", menu1id); // Attach polygon Menu
+	glutAddSubMenu("View", menu0id); // Attach polygon Menu
+	glutAddSubMenu("Polygon Mode", menu1id); // Attach polygon Menu
 	glutAddSubMenu("Rendered Polygon Face", menu2id); //Attach culling menu
 	glutAddSubMenu("Point Size", menu3id); //attach point size menu
 	glutAddSubMenu("Line Width", menu4id); //attach line width menu
