@@ -19,7 +19,7 @@
 class ProjectTwo : public OpenGLApplicationBase{
 public: 
 	ProjectTwo (){
-		floor = new Wall();
+		floor = new Wall(10, 10);
 		floor->fixedTransformation = translate(rotate(mat4(1.0), -90.0f, vec3(1.0f, 0.0f, 0.0f)), vec3(0.0f, -5.0f, 0.0f));
 		floor->material.setTextureMapped(true);
 		floor->material.setupTexture("snow.bmp");

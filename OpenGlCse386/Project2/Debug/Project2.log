@@ -1,4 +1,4 @@
-﻿Build started 12/3/2014 5:38:37 PM.
+﻿Build started 12/4/2014 6:45:43 PM.
      1>Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Project2\Project2.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Project2.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -24,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.48
+Time Elapsed 00:00:11.44
