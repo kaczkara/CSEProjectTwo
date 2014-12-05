@@ -12,6 +12,7 @@
 #include "SharedGeneralLighting.h"
 #include "SnowMan.h"
 #include "Wall.h"
+#include "LightPole.h"
 #include "ChristmasTree.h"
 #include "House.h"
 
@@ -26,14 +27,9 @@ public:
 
 		house = new House(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 
-		pyramid0 = new ChristmasTree();
-		// pyramid0->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
-		// pyramid0->material.setEmissiveMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
-		// pyramid0->addController(new SpinnerController(glm::vec3(0.0f, 0.f, 0.f), glm::vec3(0.0f, 1.0f, 0.0f)));
-
+		pyramid0 = new LightPole();
+		
 		sphere = new SnowMan();
-		//sphere->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
-		//sphere->material.setSpecularMat(glm::vec4(0.0f, 0.0f, 0.0f, 1.0f));
 		sphere->addController(new SpinnerController(glm::vec3(3.0f, 0.f, 0.f), glm::vec3(1.0f, 0.0f, 0.0f)));
 
 		cylinder = new Cylinder();
@@ -80,6 +76,14 @@ public:
 		house->setShader(shaderProgram);
 
 		setupLighting(shaderProgram);
+
+		VisualObject* transparent;
+		transparent = new Cube(2.0, 2.0, 2.0);
+		transparent ->setShader(shaderProgram);
+		transparent->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 1.0f, 0.0f, 0.5f));
+		transparent->fixedTransformation = translate(mat4(1.0f), vec3(3.0f, 0.f, 0.0f));
+		addChild(transparent);
+
 
 		view = 0;
 		rotationX=0.0f;
