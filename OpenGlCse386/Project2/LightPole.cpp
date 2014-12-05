@@ -8,9 +8,10 @@ LightPole::LightPole(void) {
 	pole->material.setAmbientAndDiffuseMat(vec4(0.0f, 0.0f, 0.0f, 1.0f));
 	this->addChild(pole); 
 
-	VisualObject* top = new Sphere();
-	top->fixedTransformation = translate(mat4(1.0f), vec3(0.0, 1.5, 0.0f));
-	top->material.setAmbientAndDiffuseMat(vec4(1.0f, 1.0f, 0.0f, 0.2f));
+	VisualObject* top = new Sphere(.15f);
+	top->fixedTransformation = translate(mat4(1.0f), vec3(0.0, 1.15, 0.0f));
+	top->material.setAmbientAndDiffuseMat(vec4(1.0f, 1.0f, 0.0f, 0.3f));
+	top->material.setEmissiveMat(vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	this->addChild(top);
 }
 

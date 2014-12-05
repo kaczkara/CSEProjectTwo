@@ -49,7 +49,7 @@ public:
 		cube->material.setAmbientAndDiffuseMat(glm::vec4(0.0f, 1.0f, 0.0f, 1.0f));
 		cube->addController(new WaypointController(waypoints, 1.5f));
 		addChild(floor);
-		addChild(pyramid0);
+		
 		addChild(sphere);
 		addChild(cylinder);
 		addChild(cone);
@@ -83,7 +83,7 @@ public:
 		transparent->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 1.0f, 0.0f, 0.5f));
 		transparent->fixedTransformation = translate(mat4(1.0f), vec3(3.0f, 0.f, 0.0f));
 		addChild(transparent);
-
+		addChild(pyramid0);
 
 		view = 0;
 		rotationX=0.0f;
