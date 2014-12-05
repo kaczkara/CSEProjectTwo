@@ -1,12 +1,10 @@
-﻿Build started 12/3/2014 5:29:55 PM.
+﻿Build started 12/4/2014 9:12:26 PM.
      1>Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\OpenGlCse386.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt bitmap_class.cpp
-         bitmap_class.cpp
-     1>c:\users\kaczkara\desktop\cseprojecttwo\openglcse386\openglcse386\bitmap_class.cpp(75): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Sphere.cpp
+         Sphere.cpp
        ResourceCompile:
          All outputs are up-to-date.
        Lib:
@@ -63,4 +61,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.16
+Time Elapsed 00:00:08.80

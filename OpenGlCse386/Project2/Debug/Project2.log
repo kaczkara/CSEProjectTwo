@@ -1,7 +1,7 @@
-﻿Build started 12/4/2014 7:37:44 PM.
+﻿Build started 12/4/2014 9:13:54 PM.
      1>Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Project2\Project2.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\Project2.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\Project2.unsuccessfulbuild".
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\Include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt LightPole.cpp
          LightPole.cpp
@@ -25,4 +25,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.19
+Time Elapsed 00:00:05.47

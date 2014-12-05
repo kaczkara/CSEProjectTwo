@@ -10,7 +10,7 @@ LightPole::LightPole(void) {
 
 	VisualObject* top = new Sphere();
 	top->fixedTransformation = translate(mat4(1.0f), vec3(0.0, 1.5, 0.0f));
-	top->material.setAmbientAndDiffuseMat(vec4(1.0f, 1.0f, 0.0f, 0.5f));
+	top->material.setAmbientAndDiffuseMat(vec4(1.0f, 1.0f, 0.0f, 0.2f));
 	this->addChild(top);
 }
 

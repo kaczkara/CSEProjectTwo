@@ -289,7 +289,10 @@ void Sphere::draw()
 	glUniformMatrix4fv(modelLocation, 1, GL_FALSE, value_ptr(modelAndFixed));
 
 	material.setShaderMaterialProperties();
+	
+	glEnable (GL_BLEND);
 
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	// Draw top
 	glBindVertexArray(vertexArrayObjectForTop);
     glDrawElements(GL_TRIANGLES, topIndicesCount, GL_UNSIGNED_INT, 0);
@@ -302,6 +305,7 @@ void Sphere::draw()
 	glBindVertexArray(vertexArrayObjectForBottom);
     glDrawElements(GL_TRIANGLES, bottomIndicesCount, GL_UNSIGNED_INT, 0);
 
+	glDisable (GL_BLEND);
 	// Draw all children
 	VisualObject::draw();
 
