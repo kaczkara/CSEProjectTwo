@@ -37,8 +37,10 @@ public:
 		//snowman->addController(new SpinnerController(glm::vec3(3.0f, 0.0f, 0.f), glm::vec3(1.0f, 0.0f, 0.0f)));
 
 		tree = new ChristmasTree();
-		tree->modelMatrix = translate(mat4(1.0f), vec3(-2.0f, -2.8f ,0.0f));
-
+		tree->addController(new SpinnerController( vec3(-2.0f, -2.8f ,-1.5f), vec3(0.0f, 1.0f, 0.0f)));
+		//tree->modelMatrix = translate(mat4(1.0f), vec3(-2.0f, -2.8f ,0.0f));
+		VisualObject* tree2 = new ChristmasTree();
+		tree2->addController(new SpinnerController( vec3(2.0f, -2.8f ,-1.5f), vec3(0.0f, 1.0f, 0.0f)));
 		snowFall = new SnowFall(.3f);
 		/*cylinder->material.setAmbientAndDiffuseMat(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 		cylinder->addController(new SpinnerController(glm::vec3(-3.0f, 0.0f, 0.0f),  glm::vec3(0.0f, 0.0f, 1.0f)));
@@ -59,6 +61,7 @@ public:
 		addChild(snowFall);
 		addChild(snowman);
 		addChild(tree);
+		addChild(tree2);
 		//addChild(cone);
 		//addChild(cube);
 		addChild(house);
@@ -78,6 +81,7 @@ public:
 		pyramid0->setShader(shaderProgram);
 		snowman->setShader(shaderProgram);
 		tree->setShader(shaderProgram);
+		tree2->setShader(shaderProgram);
 		snowFall->setShader(shaderProgram);
 		//cone->setShader(shaderProgram);
 		//cube->setShader(shaderProgram);
