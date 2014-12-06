@@ -27,7 +27,7 @@ public:
 		floor->material.setupTexture("snow.bmp");
 
 		house = new House(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
-
+		house->modelMatrix = translate(mat4(1.0), vec3(0.0f, 0.0f, -2.0f));
 		pyramid0 = new LightPole();
 		
 		sphere = new SnowMan();
@@ -103,7 +103,7 @@ public:
 	void setupLighting(GLuint shaderProgram) {
 		/// ***** Ambient Light **************
 		generalLighting.setEnabled( GL_LIGHT_ZERO, true );
-		generalLighting.setAmbientColor( GL_LIGHT_ZERO, vec4(0.2f, 0.2f, 0.2f, 1.0f));
+		generalLighting.setAmbientColor( GL_LIGHT_ZERO, vec4(0.9f, 0.9f, 0.9f, 1.0f));
 		// ***** Directional Light ****************
 		generalLighting.setEnabled( GL_LIGHT_ONE, true );
 		generalLighting.setDiffuseColor( GL_LIGHT_ONE, vec4(0.75f, 0.75f, 0.75f, 1.0f) );
@@ -164,7 +164,7 @@ public:
 		}
 	}
 	virtual void initialize(){
-		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+		glClearColor(0.9f, 0.9f, 0.9f, 0.0f);
 		glFrontFace(GL_CCW);
 		glCullFace(GL_BACK);
 		glEnable(GL_CULL_FACE);
