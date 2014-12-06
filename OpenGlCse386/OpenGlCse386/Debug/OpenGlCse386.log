@@ -1,40 +1,75 @@
-﻿Build started 12/6/2014 2:45:53 PM.
+﻿Build started 12/6/2014 3:19:40 PM.
      1>Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\OpenGlCse386.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt SoundSource.cpp
+         SoundSource.cpp
        ResourceCompile:
          All outputs are up-to-date.
        Lib:
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" /NOLOGO Debug\OpenGlCse386.res
+         Debug\aldlist.obj
+         Debug\bitmap_class.obj
+         Debug\BuildShaderProgram.obj
+         Debug\Cone.obj
+         Debug\Controller.obj
+         Debug\Cube.obj
+         Debug\CWaves.obj
+         Debug\Cylinder.obj
+         Debug\Floor.obj
+         Debug\Floor2.obj
+         Debug\Framework.obj
+         Debug\glutBase.obj
+         Debug\LoadOAL.obj
+         Debug\Material.obj
+         Debug\OpenGLApplicationBase.obj
+         Debug\Pyramid.obj
+         Debug\SharedProjectionAndViewing.obj
+         Debug\SoundSource.obj
+         Debug\Sphere.obj
+         Debug\textureCoordinates.obj
+         Debug\VisualObject.obj
+         Debug\Wall.obj
+     1>LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
          OpenGlCse386.vcxproj -> C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib
        PostBuildEvent:
          copy "*.h" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\Include\
          copy "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\"Lib\OpenGlCse386.lib"
          :VCEnd
+         al.h
+         alc.h
+         aldlist.h
          bitmap_class.h
          BuildShaderProgram.h
          Cone.h
          Controller.h
          Cube.h
+         CWaves.h
          Cylinder.h
+         efx-creative.h
+         EFX-Util.h
+         efx.h
          Floor.h
          Floor2.h
          font.h
+         Framework.h
          glutBase.h
+         LoadOAL.h
          Material.h
          OpenGLApplicationBase.h
          Pyramid.h
          resource.h
          SharedProjectionAndViewing.Conflict.h
          SharedProjectionAndViewing.h
+         SoundSource.h
          Sphere.h
          textureCoordinates.h
          vertexStructs.h
          VisualObject.h
          Wall.h
-                21 file(s) copied.
+         xram.h
+                32 file(s) copied.
                  1 file(s) copied.
        FinalizeBuildStatus:
          Deleting file "Debug\OpenGlCse386.unsuccessfulbuild".
@@ -43,4 +78,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.19
+Time Elapsed 00:00:04.94

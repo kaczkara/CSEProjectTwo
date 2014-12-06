@@ -18,6 +18,7 @@
 #include "Ornament.h"
 #include "font.h"
 #include "SnowFall.h"
+#include "SoundSource.h"
 
 //static void SpecialKeyboardCB(int Key, int x, int y);
 class ProjectTwo : public OpenGLApplicationBase{
@@ -44,7 +45,7 @@ public:
 		snowFall = new SnowFall(.3f);
 		/*cylinder->material.setAmbientAndDiffuseMat(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 		cylinder->addController(new SpinnerController(glm::vec3(-3.0f, 0.0f, 0.0f),  glm::vec3(0.0f, 0.0f, 1.0f)));
-
+		
 		cone = new Cone();
 		cone->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 1.0f, 0.0f, 1.0f));
 		cone->addController(new OrbitController(glm::vec3(10.f, 0.f, 0.f), glm::vec3(0.f, -1.f, 0.f), glm::vec3(1.f, 0.f, 0.f),35));
@@ -108,6 +109,10 @@ public:
 		rotationZ=-12.0f;
 		//floor->set();
 		//pyramid0->setShaderValues();
+		SoundSource* sound = new SoundSource("footsteps.wav");
+		sound->setLooping(true);
+		addChild(sound);
+		sound->play();
 
 	}
 	
