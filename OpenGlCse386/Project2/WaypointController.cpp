@@ -44,5 +44,7 @@ void WaypointController::update(float elapsedTimeSeconds){
 	}
 	updateVeolcityForWaypoint();
 	position = position + velocity * elapsedTimeSeconds;
+	if(target->getWorldPosition().y <= -6.15f)
+		position = waypoints[getNextWaypointIndex()];
 	target->modelMatrix = translate(mat4(1.0f), position);
 } // end update
