@@ -39,6 +39,29 @@ ChristmasTree::ChristmasTree() {
 	ornament4->modelMatrix=translate(mat4(1.0f), vec3(0.15f, 1.3f ,0.0f));
 	this->addChild(ornament4);
 
+	VisualObject* ornament5 = new Ornament(glm::vec4(0.0f, 0.5f, 0.5f, 0.4f), 0.1f);
+	ornament5->modelMatrix=translate(mat4(1.0f), vec3(0.0f, 1.5f ,-0.1f));
+	this->addChild(ornament5);
+
+	ornament5 = new Ornament(glm::vec4(0.6f, 0.9f, 0.3f, 0.4f), 0.1f);
+	ornament5->modelMatrix=translate(mat4(1.0f), vec3(-0.15f, 1.3f , 0.0f));
+	this->addChild(ornament5);
+
+	ornament5 = new Ornament(glm::vec4(0.2f, 0.3f, 0.9f, 0.4f), 0.1f);
+	ornament5->modelMatrix=translate(mat4(1.0f), vec3(-.3f, .8f , 0.0f));
+	this->addChild(ornament5);
+
+	ornament5 = new Ornament(glm::vec4(0.5f, 0.0f, 0.5f, 0.4f), 0.1f);
+	ornament5->modelMatrix=translate(mat4(1.0f), vec3(0.0f, 1.0f , -.24f));
+	this->addChild(ornament5);
+
+	ornament5 = new Ornament(glm::vec4(0.7f, 0.6f, 0.3f, 0.4f), 0.1f);
+	ornament5->modelMatrix=translate(mat4(1.0f), vec3(0.0f, .6f , -.3f));
+	this->addChild(ornament5);
+
+	ornament5 = new Ornament(glm::vec4(0.9f, 0.1f, 0.2f, 0.4f), 0.1f);
+	ornament5->modelMatrix=translate(mat4(1.0f), vec3(0.0f, .6f , .3f));
+	this->addChild(ornament5);
 }
 
 
