@@ -92,6 +92,7 @@
     <ClCompile Include="ProjectTwo.cpp" />
     <ClCompile Include="OrbitController.cpp" />
     <ClCompile Include="SharedGeneralLighting.cpp" />
+    <ClCompile Include="SnowFall.cpp" />
     <ClCompile Include="SnowMan.cpp" />
     <ClCompile Include="SpaceShip.cpp" />
     <ClCompile Include="SpinnerController.cpp" />
@@ -105,6 +106,7 @@
     <ClInclude Include="OrbitController.h" />
     <ClInclude Include="Ornament.h" />
     <ClInclude Include="SharedGeneralLighting.h" />
+    <ClInclude Include="SnowFall.h" />
     <ClInclude Include="SnowMan.h" />
     <ClInclude Include="SpaceShip.h" />
     <ClInclude Include="SpinnerController.h" />

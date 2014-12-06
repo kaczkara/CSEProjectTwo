@@ -92,6 +92,7 @@ copy "$(TargetPath)" "$(SolutionDir)"\"Lib\$(TargetFileName)"</Command>
     <ClInclude Include="Cylinder.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="Floor2.h" />
+    <ClInclude Include="font.h" />
     <ClInclude Include="glutBase.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="OpenGLApplicationBase.h" />

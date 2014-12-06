@@ -16,6 +16,7 @@
 #include "ChristmasTree.h"
 #include "House.h"
 #include "Ornament.h"
+#include "font.h"
 
 //static void SpecialKeyboardCB(int Key, int x, int y);
 class ProjectTwo : public OpenGLApplicationBase{
@@ -177,6 +178,7 @@ public:
 	} // end initialize
 	virtual void draw(){
 		setViewPoint();
+		screenTextOutput (430, 700, "Merry Christmas!", glm::vec4(1.0f, 0.0f, 1.0f, 1.0f),  GLUT_BITMAP_TIMES_ROMAN_24);
 		VisualObject::draw();
 	}
 	SharedGeneralLighting generalLighting;

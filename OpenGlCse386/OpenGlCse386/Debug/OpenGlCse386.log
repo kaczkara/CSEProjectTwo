@@ -1,17 +1,10 @@
-﻿Build started 12/5/2014 11:03:01 PM.
-     1>Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
-     1>InitializeBuildStatus:
-         Creating "Debug\OpenGlCse386.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         All outputs are up-to-date.
-       ResourceCompile:
-         All outputs are up-to-date.
-       Lib:
-         All outputs are up-to-date.
-         OpenGlCse386.vcxproj -> C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib
+﻿Build started 12/6/2014 4:48:01 AM.
+     1>Project "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         OpenGlCse386.vcxproj -> C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib
        PostBuildEvent:
-         copy "*.h" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\Include\
-         copy "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\"Lib\OpenGlCse386.lib"
+         copy "*.h" "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\"\Include\
+         copy "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\"\"Lib\OpenGlCse386.lib"
          :VCEnd
          bitmap_class.h
          BuildShaderProgram.h
@@ -21,6 +14,7 @@
          Cylinder.h
          Floor.h
          Floor2.h
+         font.h
          glutBase.h
          Material.h
          OpenGLApplicationBase.h
@@ -33,13 +27,10 @@
          vertexStructs.h
          VisualObject.h
          Wall.h
-                20 file(s) copied.
+                21 file(s) copied.
                  1 file(s) copied.
-       FinalizeBuildStatus:
-         Deleting file "Debug\OpenGlCse386.unsuccessfulbuild".
-         Touching "Debug\OpenGlCse386.lastbuildstate".
-     1>Done Building Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.98
+Time Elapsed 00:00:00.11
