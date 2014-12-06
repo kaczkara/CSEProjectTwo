@@ -29,32 +29,33 @@ public:
 		house = new House(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 		house->modelMatrix = translate(mat4(1.0), vec3(0.0f, 0.0f, -2.0f));
 		pyramid0 = new LightPole();
-		
-		sphere = new SnowMan();
-		sphere->addController(new SpinnerController(glm::vec3(3.0f, 0.f, 0.f), glm::vec3(1.0f, 0.0f, 0.0f)));
+		pyramid0->modelMatrix = translate(mat4(1.0), vec3(0.0f, -3.0, -2.0f));
+		snowman = new SnowMan();
+		snowman->addController(new SpinnerController(glm::vec3(3.0f, 0.0f, 0.f), glm::vec3(1.0f, 0.0f, 0.0f)));
 
-		cylinder = new Cylinder();
-		cylinder->material.setAmbientAndDiffuseMat(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
+		tree = new ChristmasTree();
+		tree->modelMatrix = translate(mat4(1.0f), vec3(-2.0f, -2.8f ,0.0f));
+		/*cylinder->material.setAmbientAndDiffuseMat(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 		cylinder->addController(new SpinnerController(glm::vec3(-3.0f, 0.0f, 0.0f),  glm::vec3(0.0f, 0.0f, 1.0f)));
 
 		cone = new Cone();
 		cone->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 1.0f, 0.0f, 1.0f));
 		cone->addController(new OrbitController(glm::vec3(10.f, 0.f, 0.f), glm::vec3(0.f, -1.f, 0.f), glm::vec3(1.f, 0.f, 0.f),35));
-
-		cube = new Cube();
+		*/
+		//cube = new Cube();
 		vector<glm::vec3> waypoints;
 		waypoints.push_back(glm::vec3(-3.5f, -2.5f, 3.5f));
 		waypoints.push_back(glm::vec3(3.5f, -2.5f, 3.5f));
 		waypoints.push_back(glm::vec3(3.5f, -2.5f, -3.5f));
 		waypoints.push_back(glm::vec3(-3.5f, -2.5f, -3.5f));
-		cube->material.setAmbientAndDiffuseMat(glm::vec4(0.0f, 1.0f, 0.0f, 1.0f));
-		cube->addController(new WaypointController(waypoints, 1.5f));
+		//cube->material.setAmbientAndDiffuseMat(glm::vec4(0.0f, 1.0f, 0.0f, 1.0f));
+		//cube->addController(new WaypointController(waypoints, 1.5f));
 		addChild(floor);
 		
-		addChild(sphere);
-		addChild(cylinder);
-		addChild(cone);
-		addChild(cube);
+		addChild(snowman);
+		addChild(tree);
+		//addChild(cone);
+		//addChild(cube);
 		addChild(house);
 
 		// Create array of ShaderInfo structs that specifies the vertex and 
@@ -70,10 +71,10 @@ public:
 		generalLighting.setUniformBlockForShader( shaderProgram );
 		floor->setShader(shaderProgram);
 		pyramid0->setShader(shaderProgram);
-		sphere->setShader(shaderProgram);
-		cylinder->setShader(shaderProgram);
-		cone->setShader(shaderProgram);
-		cube->setShader(shaderProgram);
+		snowman->setShader(shaderProgram);
+		tree->setShader(shaderProgram);
+		//cone->setShader(shaderProgram);
+		//cube->setShader(shaderProgram);
 		house->setShader(shaderProgram);
 
 		setupLighting(shaderProgram);
@@ -181,9 +182,9 @@ public:
 	SharedGeneralLighting generalLighting;
 	VisualObject* floor;
 	VisualObject* pyramid0;
-	VisualObject* sphere;
+	VisualObject* snowman;
 	VisualObject* house;
-	Cylinder* cylinder;
+	VisualObject* tree;
 	Cube* cube;
 	Cone* cone;
 	GLint view;
@@ -247,22 +248,6 @@ void ProjectTwo::KeyboardCB(unsigned char Key, int x, int y){
 		}
 		else {
 			pyramid0->detachFromParent();
-		}
-		break;
-	case '1':
-		if (sphere->getParent() == NULL ) {
-			this->addChild(sphere);
-		}
-		else {
-			sphere->detachFromParent();
-		}
-		break;
-	case '2':
-		if (cylinder->getParent() == NULL ) {
-			this->addChild(cylinder);
-		}
-		else {
-			cylinder->detachFromParent();
 		}
 		break;
 	case '3':

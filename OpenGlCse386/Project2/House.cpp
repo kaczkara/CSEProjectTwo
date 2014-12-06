@@ -60,11 +60,11 @@ House::House(vec4 color) {
 	wall8->material.setEmissiveMat(color);
 	addChild(wall8);
 
-	VisualObject* pyramid0 = new Pyramid(6.0f, 6.0f);
+	VisualObject* pyramid0 = new Pyramid(6.0f, 4.0f);
 	pyramid0->setShader(shaderProgram);
 	pyramid0->material.setAmbientAndDiffuseMat(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 	pyramid0->material.setEmissiveMat(vec4(0.0f, 0.0f, 1.0f, 1.0f));
-	pyramid0->modelMatrix = translate(mat4(1.0f), vec3(0.0f, 4.0f, -5.0f));
+	pyramid0->modelMatrix = translate(mat4(1.0f), vec3(0.0f, 3.0f, -5.0f));
 	addChild( pyramid0 );
 
 }
