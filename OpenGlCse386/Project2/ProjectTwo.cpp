@@ -17,6 +17,7 @@
 #include "House.h"
 #include "Ornament.h"
 #include "font.h"
+#include "SnowFall.h"
 
 //static void SpecialKeyboardCB(int Key, int x, int y);
 class ProjectTwo : public OpenGLApplicationBase{
@@ -37,6 +38,8 @@ public:
 
 		tree = new ChristmasTree();
 		tree->modelMatrix = translate(mat4(1.0f), vec3(-2.0f, -2.8f ,0.0f));
+
+		snowFall = new SnowFall(.3f);
 		/*cylinder->material.setAmbientAndDiffuseMat(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 		cylinder->addController(new SpinnerController(glm::vec3(-3.0f, 0.0f, 0.0f),  glm::vec3(0.0f, 0.0f, 1.0f)));
 
@@ -53,7 +56,7 @@ public:
 		//cube->material.setAmbientAndDiffuseMat(glm::vec4(0.0f, 1.0f, 0.0f, 1.0f));
 		//cube->addController(new WaypointController(waypoints, 1.5f));
 		addChild(floor);
-		
+		addChild(snowFall);
 		addChild(snowman);
 		addChild(tree);
 		//addChild(cone);
@@ -75,6 +78,7 @@ public:
 		pyramid0->setShader(shaderProgram);
 		snowman->setShader(shaderProgram);
 		tree->setShader(shaderProgram);
+		snowFall->setShader(shaderProgram);
 		//cone->setShader(shaderProgram);
 		//cube->setShader(shaderProgram);
 		house->setShader(shaderProgram);
@@ -188,6 +192,7 @@ public:
 	VisualObject* snowman;
 	VisualObject* house;
 	VisualObject* tree;
+	VisualObject* snowFall;
 	Cube* cube;
 	Cone* cone;
 	GLint view;

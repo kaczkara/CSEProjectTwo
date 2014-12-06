@@ -45,4 +45,4 @@ void WaypointController::update(float elapsedTimeSeconds){
 	updateVeolcityForWaypoint();
 	position = position + velocity * elapsedTimeSeconds;
 	target->modelMatrix = translate(mat4(1.0f), position);
-} // end update
+} // end update
