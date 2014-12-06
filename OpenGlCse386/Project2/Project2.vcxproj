@@ -119,7 +119,6 @@
     <None Include="pfixed-function-shared-lighting-phong.frag" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="earth.bmp" />
     <Image Include="logs.bmp" />
     <Image Include="roof.bmp" />
     <Image Include="snow.bmp" />

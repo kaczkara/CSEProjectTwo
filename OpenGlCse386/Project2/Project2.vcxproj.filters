@@ -105,9 +105,6 @@
     <Image Include="snow.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="earth.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="logs.bmp">
       <Filter>Resource Files</Filter>
     </Image>
