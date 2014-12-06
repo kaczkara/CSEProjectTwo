@@ -1,10 +1,17 @@
-﻿Build started 12/6/2014 1:09:12 PM.
-     1>Project "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
-         OpenGlCse386.vcxproj -> C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib
+﻿Build started 12/6/2014 2:45:53 PM.
+     1>Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\OpenGlCse386.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+       Lib:
+         All outputs are up-to-date.
+         OpenGlCse386.vcxproj -> C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib
        PostBuildEvent:
-         copy "*.h" "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\"\Include\
-         copy "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\"\"Lib\OpenGlCse386.lib"
+         copy "*.h" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\Include\
+         copy "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\"Lib\OpenGlCse386.lib"
          :VCEnd
          bitmap_class.h
          BuildShaderProgram.h
@@ -29,8 +36,11 @@
          Wall.h
                 21 file(s) copied.
                  1 file(s) copied.
-     1>Done Building Project "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" (Build target(s)).
+       FinalizeBuildStatus:
+         Deleting file "Debug\OpenGlCse386.unsuccessfulbuild".
+         Touching "Debug\OpenGlCse386.lastbuildstate".
+     1>Done Building Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.12
+Time Elapsed 00:00:00.19
