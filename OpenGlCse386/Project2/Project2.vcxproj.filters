@@ -48,6 +48,9 @@
     <ClCompile Include="LightPole.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Ornament.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OrbitController.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LightPole.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ornament.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

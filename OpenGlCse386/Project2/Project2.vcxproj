@@ -88,6 +88,7 @@
     <ClCompile Include="House.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="LightPole.cpp" />
+    <ClCompile Include="Ornament.cpp" />
     <ClCompile Include="ProjectTwo.cpp" />
     <ClCompile Include="OrbitController.cpp" />
     <ClCompile Include="SharedGeneralLighting.cpp" />
@@ -102,6 +103,7 @@
     <ClInclude Include="Light.h" />
     <ClInclude Include="LightPole.h" />
     <ClInclude Include="OrbitController.h" />
+    <ClInclude Include="Ornament.h" />
     <ClInclude Include="SharedGeneralLighting.h" />
     <ClInclude Include="SnowMan.h" />
     <ClInclude Include="SpaceShip.h" />

@@ -15,6 +15,7 @@
 #include "LightPole.h"
 #include "ChristmasTree.h"
 #include "House.h"
+#include "Ornament.h"
 
 //static void SpecialKeyboardCB(int Key, int x, int y);
 class ProjectTwo : public OpenGLApplicationBase{
@@ -82,8 +83,13 @@ public:
 		transparent ->setShader(shaderProgram);
 		transparent->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 1.0f, 0.0f, 0.5f));
 		transparent->fixedTransformation = translate(mat4(1.0f), vec3(3.0f, 0.f, 0.0f));
+
+		VisualObject* ornament = new Ornament(glm::vec4(1.0f, 0.0f, 0.0f, 0.3f), 0.1f);
+		ornament ->setShader(shaderProgram);
+
 		addChild(transparent);
 		addChild(pyramid0);
+		addChild(ornament);
 
 		view = 0;
 		rotationX=0.0f;
