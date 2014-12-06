@@ -127,8 +127,11 @@
     <ResourceCompile Include="Project2.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="bells.wav" />
     <Media Include="flapping_wings.wav" />
     <Media Include="Footsteps.wav" />
+    <Media Include="HaveYourself.wav" />
+    <Media Include="JingleBells.wav" />
     <Media Include="pop.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

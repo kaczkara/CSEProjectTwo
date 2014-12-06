@@ -109,7 +109,7 @@ public:
 		rotationZ=-12.0f;
 		//floor->set();
 		//pyramid0->setShaderValues();
-		SoundSource* sound = new SoundSource("footsteps.wav");
+		SoundSource* sound = new SoundSource("bells.wav");
 		sound->setLooping(true);
 		addChild(sound);
 		sound->play();
@@ -338,7 +338,7 @@ void ProjectTwo::setUpMenus(){
 
 int main(int argc, char** argv){
 	GLUTBaseInit(argc, argv); 
-	GLUTBaseCreateWindow( "CSE 386 Lab 8" );
+	GLUTBaseCreateWindow( "CSE 386 Final Project" );
 	ProjectTwo pApp;
 	labClassPtr=&pApp;
 	GLUTBaseRunApplication(&pApp);

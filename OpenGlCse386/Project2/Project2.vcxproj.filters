@@ -127,5 +127,14 @@
     <Media Include="pop.wav">
       <Filter>Resource Files</Filter>
     </Media>
+    <Media Include="HaveYourself.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="JingleBells.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="bells.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
   </ItemGroup>
 </Project>

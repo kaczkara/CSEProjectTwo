@@ -1,14 +1,11 @@
-﻿Build started 12/6/2014 3:19:40 PM.
-     1>Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
-     1>InitializeBuildStatus:
-         Creating "Debug\OpenGlCse386.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt SoundSource.cpp
-         SoundSource.cpp
-       ResourceCompile:
-         All outputs are up-to-date.
+﻿Build started 12/6/2014 3:35:37 PM.
+     1>Project "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt bitmap_class.cpp
+         Skipping... (no relevant changes detected)
+         bitmap_class.cpp
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" /NOLOGO Debug\OpenGlCse386.res
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" /NOLOGO Debug\OpenGlCse386.res
          Debug\aldlist.obj
          Debug\bitmap_class.obj
          Debug\BuildShaderProgram.obj
@@ -32,10 +29,10 @@
          Debug\VisualObject.obj
          Debug\Wall.obj
      1>LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
-         OpenGlCse386.vcxproj -> C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib
+         OpenGlCse386.vcxproj -> C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib
        PostBuildEvent:
-         copy "*.h" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\Include\
-         copy "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\"\"Lib\OpenGlCse386.lib"
+         copy "*.h" "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\"\Include\
+         copy "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\Debug\OpenGlCse386.lib" "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\"\"Lib\OpenGlCse386.lib"
          :VCEnd
          al.h
          alc.h
@@ -71,11 +68,8 @@
          xram.h
                 32 file(s) copied.
                  1 file(s) copied.
-       FinalizeBuildStatus:
-         Deleting file "Debug\OpenGlCse386.unsuccessfulbuild".
-         Touching "Debug\OpenGlCse386.lastbuildstate".
-     1>Done Building Project "C:\Users\Kaczkara\Desktop\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\Stevie Yakkel\Documents\GitHub\CSEProjectTwo\OpenGlCse386\OpenGlCse386\OpenGlCse386.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.94
+Time Elapsed 00:00:00.49
