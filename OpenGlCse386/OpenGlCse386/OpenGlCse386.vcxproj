@@ -127,9 +127,6 @@ copy "$(TargetPath)" "$(SolutionDir)"\"Lib\$(TargetFileName)"</Command>
   <ItemGroup>
     <ResourceCompile Include="OpenGlCse386.rc" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="snow.bmp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

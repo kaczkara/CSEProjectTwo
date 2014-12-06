@@ -92,6 +92,9 @@
     <ClInclude Include="SnowFall.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="pcFS.frag" />
@@ -102,5 +105,19 @@
     <Image Include="snow.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="earth.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="logs.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="roof.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Project2.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

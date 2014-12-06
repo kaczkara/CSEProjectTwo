@@ -105,6 +105,7 @@
     <ClInclude Include="LightPole.h" />
     <ClInclude Include="OrbitController.h" />
     <ClInclude Include="Ornament.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="SharedGeneralLighting.h" />
     <ClInclude Include="SnowFall.h" />
     <ClInclude Include="SnowMan.h" />
@@ -118,7 +119,13 @@
     <None Include="pfixed-function-shared-lighting-phong.frag" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="earth.bmp" />
+    <Image Include="logs.bmp" />
+    <Image Include="roof.bmp" />
     <Image Include="snow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Project2.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

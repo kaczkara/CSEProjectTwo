@@ -32,7 +32,8 @@ public:
 		pyramid0 = new LightPole();
 		pyramid0->modelMatrix = translate(mat4(1.0), vec3(0.0f, -3.0, -2.0f));
 		snowman = new SnowMan();
-		snowman->addController(new SpinnerController(glm::vec3(3.0f, 0.0f, 0.f), glm::vec3(1.0f, 0.0f, 0.0f)));
+		snowman->modelMatrix=translate(mat4(1.0f), vec3(0.0f,-2.8f, 0.0));
+		//snowman->addController(new SpinnerController(glm::vec3(3.0f, 0.0f, 0.f), glm::vec3(1.0f, 0.0f, 0.0f)));
 
 		tree = new ChristmasTree();
 		tree->modelMatrix = translate(mat4(1.0f), vec3(-2.0f, -2.8f ,0.0f));
@@ -80,16 +81,16 @@ public:
 
 		setupLighting(shaderProgram);
 
-		VisualObject* transparent;
+		/*VisualObject* transparent;
 		transparent = new Cube(2.0, 2.0, 2.0);
 		transparent ->setShader(shaderProgram);
 		transparent->material.setAmbientAndDiffuseMat(glm::vec4(1.0f, 1.0f, 0.0f, 0.5f));
 		transparent->fixedTransformation = translate(mat4(1.0f), vec3(3.0f, 0.f, 0.0f));
-
+		*/
 		VisualObject* ornament = new Ornament(glm::vec4(1.0f, 0.0f, 0.0f, 0.3f), 0.1f);
 		ornament ->setShader(shaderProgram);
 
-		addChild(transparent);
+		//addChild(transparent);
 		addChild(pyramid0);
 		addChild(ornament);
 
@@ -107,17 +108,17 @@ public:
 		generalLighting.setEnabled( GL_LIGHT_ZERO, true );
 		generalLighting.setAmbientColor( GL_LIGHT_ZERO, vec4(0.9f, 0.9f, 0.9f, 1.0f));
 		// ***** Directional Light ****************
-		generalLighting.setEnabled( GL_LIGHT_ONE, true );
+		generalLighting.setEnabled( GL_LIGHT_ONE, false );
 		generalLighting.setDiffuseColor( GL_LIGHT_ONE, vec4(0.75f, 0.75f, 0.75f, 1.0f) );
 		generalLighting.setSpecularColor( GL_LIGHT_ONE, vec4(1.0f, 1.0f, 1.0f, 1.0f) );
 		generalLighting.setPositionOrDirection( GL_LIGHT_ONE, vec4(1.0f, 1.0f, 1.0f, 0.0f) );
 		// ***** Positional Light ***************
-		generalLighting.setEnabled( GL_LIGHT_TWO, true );
+		generalLighting.setEnabled( GL_LIGHT_TWO, false );
 		generalLighting.setDiffuseColor( GL_LIGHT_TWO, vec4(0.5f, 0.5f, 0.5f, 1.0f) );
 		generalLighting.setSpecularColor( GL_LIGHT_TWO, vec4(1.0f, 1.0f, 1.0f, 1.0f) );
 		generalLighting.setPositionOrDirection( GL_LIGHT_TWO, vec4(1.0f, 3.0f, 1.0f, 1.0f) );
 		// ***** Spot Light **************
-		generalLighting.setEnabled( GL_LIGHT_THREE, true );
+		generalLighting.setEnabled( GL_LIGHT_THREE, false );
 		generalLighting.setIsSpot( GL_LIGHT_THREE, true );
 		generalLighting.setDiffuseColor( GL_LIGHT_THREE, vec4(1.0f, 1.0f, 1.0f, 1.0f) );
 		generalLighting.setSpecularColor( GL_LIGHT_THREE, vec4(1.0f, 1.0f, 1.0f, 1.0f) );
